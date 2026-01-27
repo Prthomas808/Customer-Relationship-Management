@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .models import Record
+from .forms import AddRecordForm
 
 # Create your views here.
 def home(request):
@@ -28,4 +29,10 @@ def delete_customer(request, pk):
     else:
         messages.success(request, "Only admin can access this")
         return redirect("home")
-    
+
+def add_customer(request):
+    form = AddRecordForm()
+    return render(request, "add_customer.html", {"form" : form})
+
+def update_customer():
+    pass

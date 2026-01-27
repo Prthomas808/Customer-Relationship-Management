@@ -3,8 +3,9 @@
 {% block title %}CRM | Home{% endblock %}
 
 {% block content %}
-    <div class="flex flex-col justify-center items-center">
+    <div class="flex flex-col justify-center items-center mt-3">
         {% if user.is_authenticated %}
+            <a href="{% url "add_customer"%}" class="py-3 px-10 bg-gray-300 rounded-2xl">Add Customer</a>
             {% include "crm_table.html" %}
         {% else %}
             <h1>Show Log In Form</h1>
