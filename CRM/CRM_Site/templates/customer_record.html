@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Customer Record</h1> 
+    <div class="flex flex-col mb-5">
+        <h1>Name: {{record.first_name}} {{record.last_name}}</h1>
+        <h1>Email: {{record.email}}</h1>
+        <h1>Address: {{record.address}}, {{record.city}}, {{record.state}}, {{record.zip_code}}</h1>
+    </div>
+       
+    <a href="{% url "update_customer" record.id %}" class="px-5 py-2 bg-purple-200 rounded-xl">Update</a>
+    <a href="{% url "delete_customer" record.id %}" class="px-5 py-2 bg-red-600 text-white rounded-xl">Delete</a>
+
+{% endblock %}

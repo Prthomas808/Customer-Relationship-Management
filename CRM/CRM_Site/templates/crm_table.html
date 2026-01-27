@@ -1,21 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Customer Relationship Manager</h1>
+    <h1>Customer Relationship Manager!</h1>
                 <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>E-mail Address</th>
-                        <th>Address</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Zip Code</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>E-mail Address</th>
+                            <th>Address</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zip Code</th>
+                        </tr>
+                    </thead>
                     {% for record in records %}
                     <tr>
-                        <td>{{record.id}}</td>
+                        <td><a href="{% url "record" record.id %}">{{record.id}}</a></td>
                         <td>{{record.first_name}}</td>
                         <td>{{record.last_name}}</td>
                         <td>{{record.email}}</td>
