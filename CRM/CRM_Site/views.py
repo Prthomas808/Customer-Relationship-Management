@@ -39,5 +39,12 @@ def add_customer(request):
                 return redirect("home")
         return render(request, "add_customer.html", {"form" : form})
 
-def update_customer():
-    pass
+def update_customer(request, pk):
+    if request.user.is_authenticated:
+        customer = Record.objects.get(id=pk)
+        form = AddRecordForm(request.POST or None, instance=customer)
+        if form.is_valid():
+            form.save()
+            return redirect("home")
+    
+    return render(request, "update_customer.html", {"form" : form})
