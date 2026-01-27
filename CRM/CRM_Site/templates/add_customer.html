@@ -3,8 +3,9 @@
 {% block content %}
     <h1>Add Customer</h1>
 
-    <form action="{% url "home" %}" method="post">
+    <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
+        <button type="submit">Add Customer</button>
     </form>
 {% endblock %}

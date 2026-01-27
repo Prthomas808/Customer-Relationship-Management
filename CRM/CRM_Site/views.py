@@ -31,8 +31,13 @@ def delete_customer(request, pk):
         return redirect("home")
 
 def add_customer(request):
-    form = AddRecordForm()
-    return render(request, "add_customer.html", {"form" : form})
+    form = AddRecordForm(request.POST or None)
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            if form.is_valid():      
+                form.save()
+                return redirect("home")
+        return render(request, "add_customer.html", {"form" : form})
 
 def update_customer():
     pass
