@@ -8,6 +8,7 @@
         <h1>Address: {{record.address}}, {{record.city}}, {{record.state}}, {{record.zip_code}}</h1>
     </div>
        
+    <button action="{% url "home" %}" type="submit">Back</button>
     <a href="{% url "update_customer" record.id %}" class="px-5 py-2 bg-purple-200 rounded-xl">Update</a>
     <a href="{% url "delete_customer" record.id %}" class="px-5 py-2 bg-red-600 text-white rounded-xl">Delete</a>
 

@@ -2,12 +2,24 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .models import Record
-from .forms import AddRecordForm
+from .forms import AddRecordForm, UserRegisterForm
 
 # Create your views here.
 def home(request):
     records = Record.objects.all()
     return render(request, "home.html", {"records" : records})
+
+def register_user(request):
+    if request.method == "POST":
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("home")
+    else:
+        form = UserRegisterForm()
+
+    return render(request, "register_user.html", {"form" : form})
+
 
 def login_user(request):
     pass

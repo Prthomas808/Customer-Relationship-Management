@@ -8,7 +8,8 @@
             <a href="{% url "add_customer"%}" class="py-3 px-10 bg-gray-300 rounded-2xl">Add Customer</a>
             {% include "crm_table.html" %}
         {% else %}
-            <h1>Show Log In Form</h1>
+             {% comment %} Shows Login Form {% endcomment %}
+            <h1>Please Log In</h1>
         {% endif %}
     </div>
 

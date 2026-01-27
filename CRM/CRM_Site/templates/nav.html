@@ -1,0 +1,9 @@
+<nav class="flex items-center justify-between px-6 py-4 bg-gray-100">
+    <h1 class="text-xl font-bold">CRM</h1>
+    
+    {% if user.is_authenticated %}
+        <a href="{% url "login" %}">Logout</a>
+    {% else %}
+        <a href="{% url "login" %}"></a>
+    {% endif %}
+</nav>
