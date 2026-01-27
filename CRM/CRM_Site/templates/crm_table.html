@@ -1,31 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Customer Relationship Manager!</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>E-mail Address</th>
-                            <th>Address</th>
-                            <th>City</th>
-                            <th>State</th>
-                            <th>Zip Code</th>
-                        </tr>
-                    </thead>
-                    {% for record in records %}
-                    <tr>
-                        <td><a href="{% url "record" record.id %}">{{record.id}}</a></td>
-                        <td>{{record.first_name}}</td>
-                        <td>{{record.last_name}}</td>
-                        <td>{{record.email}}</td>
-                        <td>{{record.address}}</td>
-                        <td>{{record.city}}</td>
-                        <td>{{record.state}}</td>
-                        <td>{{record.zip_code}}</td>
-                    </tr>
-                    {% endfor %}
-                </table>
+        <table class="min-w-full border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+            <thead class="bg-black text-white">
+                <tr class="text-left text-sm uppercase tracking-wider">
+                    <th class="px-6 py-3">ID</th>
+                    <th class="px-6 py-3">First Name</th>
+                    <th class="px-6 py-3">Last Name</th>
+                    <th class="px-6 py-3">E-mail Address</th>
+                    <th class="px-6 py-3">Address</th>
+                    <th class="px-6 py-3">City</th>
+                    <th class="px-6 py-3">State</th>
+                    <th class="px-6 py-3">Zip Code</th>
+                </tr>
+            </thead>
+
+        <tbody class="divide-y divide-gray-200 bg-white">
+            {% for record in records %}
+                <tr class="odd:bg-white even:bg-gray-200 hover:bg-purple-50 transition-colors">
+                    <td class="px-6 py-3 font-medium text-purple-600">
+                        <a href="{% url "record" record.id %}" class="hover:underline">
+                            {{ record.id }}
+                        </a>
+                    </td>
+                    <td class="px-6 py-3">{{ record.first_name }}</td>
+                    <td class="px-6 py-3">{{ record.last_name }}</td>
+                    <td class="px-6 py-3 text-gray-600">{{ record.email }}</td>
+                    <td class="px-6 py-3">{{ record.address }}</td>
+                    <td class="px-6 py-3">{{ record.city }}</td>
+                    <td class="px-6 py-3">{{ record.state }}</td>
+                    <td class="px-6 py-3">{{ record.zip_code }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
 {% endblock %}
