@@ -23,9 +23,11 @@ Frontend: HTML, CSS
 Forms: Django Crispy Forms
 
 📂 Core Functionality
-Full CRUD workflows for customer records
-Secure handling of user sessions and permissions
-Scalable model design following Django best practices
+- Full CRUD workflows for customer records
+  
+- Secure handling of user sessions and permissions
+  
+- Scalable model design following Django best practices
 
 ⚙️ Setup & Installation
 # Clone the repository
