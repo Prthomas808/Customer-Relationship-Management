@@ -7,7 +7,7 @@ from .forms import AddRecordForm, UserRegisterForm
 # Create your views here.
 def home(request):
     records = Record.objects.all()
-    return render(request, "home.html", {"records" : records})
+    return render(request, "index.html", {"records" : records})
 
 def register_user(request):
     if request.method == "POST":
