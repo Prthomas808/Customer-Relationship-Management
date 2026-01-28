@@ -29,7 +29,7 @@ A full-stack web-based Customer Relationship Manager (CRM) built with Django to 
 
 ⚙️ Setup & Installation 
 - Clone the repository
-  - git clone https://github.com/your-username/django-crm.git
+  - git clone https://github.com/Prthomas808/Customer-Relationship-Management
 
 - Navigate to the project directory
   - cd crm
