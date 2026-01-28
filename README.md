@@ -32,7 +32,7 @@ A full-stack web-based Customer Relationship Manager (CRM) built with Django to 
   - git clone https://github.com/Prthomas808/Customer-Relationship-Management
 
 - Create and activate a virtual environment
-  - python -m venv venv
+  - python3 -m venv venv
   - source venv/bin/activate  (On Windows: venv\Scripts\activate)
     
 - Navigate to the project directory
