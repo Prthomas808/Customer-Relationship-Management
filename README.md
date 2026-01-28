@@ -27,18 +27,18 @@ A full-stack web-based Customer Relationship Manager (CRM) built with Django to 
 - Secure handling of user sessions and permissions
 - Scalable model design following Django best practices
 
-⚙️ Setup & Installation
-# Clone the repository
+# Setup & Installation
+## Clone the repository
 - git clone https://github.com/your-username/django-crm.git
 
-# Navigate to the project directory
+## Navigate to the project directory
 - cd crm
 
-# Create and activate a virtual environment
+## Create and activate a virtual environment
 - python -m venv venv
 - source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Start the development server
+## Start the development server
 - python3 manage.py runserver
 
 📌 Purpose
